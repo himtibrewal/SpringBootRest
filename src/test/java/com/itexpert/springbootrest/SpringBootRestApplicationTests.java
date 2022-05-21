@@ -1,4 +1,4 @@
-package com.example.springbootrest;
+package com.itexpert.springbootrest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

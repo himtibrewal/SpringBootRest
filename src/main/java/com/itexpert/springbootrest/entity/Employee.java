@@ -1,21 +1,30 @@
-package com.example.springbootrest.model;
+package com.itexpert.springbootrest.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@Entity
 public class Employee {
 
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "address", nullable = false)
     private String address;
 
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     private Date createdAt;
@@ -24,11 +33,11 @@ public class Employee {
 
     private Date deletedAt;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
